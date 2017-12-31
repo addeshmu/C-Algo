@@ -1,0 +1,19 @@
+//============================================================================
+// Name        : HelloWorld.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "Initiate.h"
+using namespace std;
+
+int main() {
+	string s;
+	cin>>s;
+	Initiate init(s);
+	init.showVal();
+	return 0;
+}

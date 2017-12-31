@@ -1,0 +1,86 @@
+//============================================================================
+// Name        : DaysInMonthCodeChef.cpp
+// Author      : Amit
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+int findDayDigit(string day) {
+
+	if (day == "Mon")
+		return 1;
+	if (day == "Tue")
+		return 2;
+	if (day == "Wed")
+		return 3;
+	if (day == "Thu")
+		return 4;
+	if (day == "Fri")
+		return 5;
+	if (day == "Sat")
+		return 6;
+	if (day == "Sun")
+		return 7;
+	return -1;
+
+}
+void outputDays(pair<int, string> pair) {
+	int days = pair.first;
+	string start = pair.second;
+
+	int st = findDayDigit(start);
+	vector<int> *dates = new vector<int>();
+	vector<int>::iterator it;
+	int md = days % 7;
+	int con = (days-md)/7;
+	if (md == 0) {
+		for (int i = 0; i < 7; i++) {
+			dates->push_back(days / 7);
+		}
+	} else {
+		it = dates->begin();
+		while (it!= dates->end()) {
+			*it = con;
+			it++;
+		}
+		it = dates->begin() + st - 1;
+		while (md != 0) {
+			if (it == dates->end()) {
+				it = dates->begin();
+			}
+			*it++;
+			it++;
+			md--;
+		}
+	}
+	it = dates->begin();
+	while(it!=dates->end()) {
+		cout<<*it<<" ";
+		it++;
+	}
+	cout<<endl;
+}
+
+int main() {
+	int n;
+	vector<pair<int, string> > *inp = new vector<pair<int, string> >;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		string start;
+		int date;
+		cin >> date >> start;
+		inp->push_back(make_pair(date, start));
+	}
+	vector<pair<int, string> >::iterator it;
+	for (it = inp->begin(); it != inp->end(); ++it) {
+		outputDays(*it);
+	}
+
+	delete[] inp;
+	return 0;
+}

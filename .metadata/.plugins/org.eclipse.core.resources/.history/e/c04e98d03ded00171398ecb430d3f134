@@ -1,0 +1,18 @@
+/*
+ * Initiate.cpp
+ *
+ *  Created on: Dec 30, 2017
+ *      Author: amitd92
+ */
+
+#include "Initiate.h"
+
+Initiate::Initiate() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Initiate::~Initiate() {
+	// TODO Auto-generated destructor stub
+}
+

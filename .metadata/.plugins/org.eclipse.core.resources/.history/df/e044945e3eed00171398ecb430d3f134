@@ -1,0 +1,20 @@
+/*
+ * Initiate.h
+ *
+ *  Created on: Dec 30, 2017
+ *      Author: amitd92
+ */
+using namespace std;
+
+#ifndef INITIATE_H_
+#define INITIATE_H_
+
+class Initiate {
+private:
+	string val;
+public:
+	Initiate(string);
+
+};
+
+#endif /* INITIATE_H_ */
